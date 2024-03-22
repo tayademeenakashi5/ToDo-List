@@ -1,0 +1,52 @@
+<div class="bootstrap-wrapper background-container ">
+    <div class="container">
+      <div class="row mt">
+        <div class="col-md-3">
+          <img src="/assets/6.jpeg" height="500px" width="700px"><!--side img-->
+        </div>
+        <div class="col-md-6 offset-md-3">
+          <div class="card custom-card shadow-border">
+            <div class="card-header text-center">
+              <img class="img-fluid" style="width: 100px" src="/assets/bvgh9wwg.png" alt=""><!--lock logo-->
+              <h2>Login here !!</h2>
+            </div>
+            <div class="card-body">
+              <!-- Form -->
+              <form (ngSubmit)="onSubmit()">
+                <mat-form-field class="full-width">
+                  <mat-label>Email Id</mat-label>
+                  <input [(ngModel)]="credentials.emailId" name="emailId" required type="text" matInput />
+                </mat-form-field>
+                <mat-form-field class="full-width">
+                  <mat-label>Password</mat-label>
+                  <input [(ngModel)]="credentials.password" required name="password" type="password" matInput />
+                </mat-form-field>
+                <div class="container text-center">
+                  <button type="submit" mat-raised-button color="primary">Login</button>
+                  <button style="margin-left:30px;" type="reset" mat-raised-button color="primary">Reset</button>
+                </div>
+              </form>
+              <div *ngFor="let task of task1 | keyvalue">
+                <div class="task-container">
+                  <!-- Display task details here -->
+                  <p>{{ task.key }}: {{ task.value }}</p>
+                </div>
+              </div>
+              <div *ngIf="successMessage" class="text-center success-message">
+                <p>{{ successMessage }}</p>
+              </div>
+              <div *ngIf="errorMessage" class="text-center error-message">
+                <p>{{ errorMessage }}</p>
+              </div>
+              <div class="text-center">
+                <h4>Don't Have An Account ? <a routerLink="/register">Sign up </a></h4>
+              </div>
+  
+            </div>
+  
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

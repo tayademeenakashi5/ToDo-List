@@ -1,0 +1,82 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { 
+    display: flex;
+    flex-direction: column;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+  
+    font-family: Roboto,
+     "Helvetica Neue", sans-serif;
+}
+
+
+.text-center{
+    text-align: center;
+}
+.mt{
+    margin-top: 20px;
+}
+
+/*
+main {
+    flex: 1;
+}
+  
+  footer {
+    background-color: #7e7b7b;
+    color: #fff;
+    text-align: center;
+    
+    
+    height: 50px; 
+ 
+ 
+  }*/
+/* Footer styles */
+footer {
+    background-color: #232222;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    font-size: 5px; 
+    width: 100%;
+    margin-top: auto;
+    
+    
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    font-size: small;
+}
+
+/*.footer-nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: large;
+}*/
+
+.social-links {
+    margin-top: 20px;
+    font-size: medium;
+}
+
+.social-link {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.footer-feedback {
+    margin-top: 20px;
+}
+
+.footer-feedback a {
+    color: #fff;
+    text-decoration: none;
+}

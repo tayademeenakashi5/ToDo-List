@@ -1,0 +1,78 @@
+
+.background-container {
+  background-image:  url('/assets/3.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  height: 100vh; 
+  padding: 20px;
+}
+
+
+.task-card{
+    width: 18rem;
+    margin: 2rem;
+    max-width: 400px; 
+    display: inline-block;
+    background-image:  url('/assets/7.jpg');
+   
+   
+  }
+  h2{
+    font-weight: 550;
+    text-align: center;
+  }
+  #task-category{
+    background-color: #e0e0e0;
+    width: fit-content;
+    padding: .5rem .7rem;
+    border-radius: 300px;
+    font-weight:550;
+  }
+  
+  .priority-button {
+    margin-right: 8px;
+  }
+  
+  .mat-card-title-group {
+    display: flex;
+    align-items: center;
+  }
+  
+  mat-card-content {
+    padding: 16px;
+  }
+  
+  #task-category {
+    font-weight: bold;
+  }
+  
+  
+  mat-button {
+    margin-right: 8px; 
+  }
+  
+  mat-icon {
+    margin-right: 4px; 
+  }
+  
+  mat-card {
+    background-color:#f1efef; 
+    border-radius: 9px; 
+    box-shadow: 0 4px 8px #a11414e6;
+    display: block;
+    
+  
+  }
+  
+ 
+  
+  mat-card:hover {
+    transform: translateY(-4px); 
+    transition: transform 0.2s ease-in-out;
+  }
+
+  
+  
+  

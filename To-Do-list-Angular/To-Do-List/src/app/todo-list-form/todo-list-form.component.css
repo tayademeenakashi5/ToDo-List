@@ -1,0 +1,104 @@
+/* todo-list-form.component.css  #f4f4f4 */
+/*.background-container {
+  background-image:  url('/assets/5.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  padding: 20px;
+}
+*/
+.task-form-container {
+  display: none;
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color:  #73008c,palegreen;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(150, 47, 47, 0.9);
+  
+}
+
+.task-form-container.visible {
+  display: block;
+}
+
+.task-form-container form div {
+  margin-bottom: 15px;
+}
+
+.task-form-container label {
+  display: block;
+  font-weight: bold;
+  color:rgb(201, 105, 26);
+  
+}
+
+.task-form-container input,
+.task-form-container textarea,
+.task-form-container select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.task-form-container button {
+  background-color: #1792f7;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+ 
+}
+
+.task-form-container button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+#add-note-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #4c66af;
+  color: #fff;
+  font-size: 1.5em;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#add-note-button mat-icon {
+  font-size: 24px;
+ 
+}
+/*
+}
+.success-message {
+  color:green;
+}
+
+.error-message {
+  color: red;
+}
+*/
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.success-message {
+  color: green;
+  font-size: 14px;
+  margin-top: 5px;
+}

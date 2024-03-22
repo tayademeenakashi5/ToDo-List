@@ -1,0 +1,48 @@
+
+.sapce{
+  margin-right: 70px;
+  
+}
+
+
+.mat-toolbar {/* before login navbar */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(30, 49, 77); 
+  /*background-color: rgb(190, 44, 76);*/
+  color: white;
+}
+
+.mat-toolbar a {
+  margin-right: 50px; 
+ 
+  
+}
+
+.mat-toolbar.logged-in {/* after login navbar */
+ background-color: rgb(78, 91, 160); 
+}
+
+.space1 {
+ display: flex;
+ align-items: center;   
+}
+
+button{
+ background-color: #57759c;
+ height:  3.2rem;
+ width: 3%;
+ border-bottom: 1px solid #8b8b8b;
+ border-radius: 30%;
+
+ 
+}
+
+.search-container{
+ background-color: inherit;
+ text-align: center;
+ padding: 0.5rem 1rem 0.5rem 0; 
+ padding-top: 6%;
+ 
+}

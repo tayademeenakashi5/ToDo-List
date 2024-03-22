@@ -1,0 +1,95 @@
+/* Add any additional styles based on your requirements */
+.task-card{
+  width: 19rem;
+  margin: 2rem;
+  max-width: 400px; 
+  display: inline-block;
+  background-image:  url('/assets/7.jpg');
+ 
+}
+h2{
+  font-weight: 550;
+  text-align: center;
+}
+#task-category{
+  background-color: #e0e0e0;
+  width: fit-content;
+  padding: .5rem .7rem;
+  border-radius: 300px;
+  font-weight:550;
+}
+
+.priority-button {
+  margin-right: 8px;
+}
+
+.mat-card-title-group {
+  display: flex;
+  align-items: center;
+}
+
+mat-card-content {
+  padding: 16px;
+}
+
+#task-category {
+  font-weight: bold;
+}
+
+
+mat-button {
+  margin-right: 8px; 
+}
+
+mat-icon {
+  margin-right: 4px; 
+}
+
+mat-card {
+  background-color:#f1efef; 
+  border-radius: 9px; 
+  box-shadow: 0 4px 8px #5e0606e6;
+  display: block;
+  
+
+}
+
+
+
+mat-card:hover {
+  transform: translateY(-4px); 
+  transition: transform 0.2s ease-in-out;
+}
+
+/* status */
+.pending-status {
+  color: red; 
+}
+.in-progress-status {
+  color: rgb(202, 119, 11); 
+}
+
+.completed-status {
+  color: green; 
+}
+
+/* priority */
+
+.high-priority {
+  color:black;
+  border: 1px solid red; 
+  background-color: red;
+}
+
+.medium-priority {
+  color: black;
+  border: 1px solid orange;
+  background-color: orange;
+}
+
+
+.low-priority {
+  color: black;
+  border: 1px solid yellow;
+  background-color: yellow;
+}

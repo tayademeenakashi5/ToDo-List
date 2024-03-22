@@ -1,0 +1,23 @@
+<div class="bootstrap-wrapper background-container">
+    <mat-card matRipple class="task-card" *ngFor="let element of archivedTaskList">
+      <mat-card-title-group>
+        <!-- Task Details -->
+        <mat-card-title>
+          <h2>{{element.taskName}}</h2>
+          <p>Due Date: {{element.dueDate}}</p>
+        </mat-card-title>
+        <mat-card-title>
+          <p>{{element.discription}}</p>
+        </mat-card-title>
+        <mat-card-title>
+          <p>Status: {{element.taskStatus}}</p>
+        </mat-card-title>
+        <mat-card-title>
+          <p>Priority: {{element.taskPriority}}</p>
+        </mat-card-title>
+        <!-- Restore Button -->
+        
+      </mat-card-title-group>
+    </mat-card>
+  </div>
+  

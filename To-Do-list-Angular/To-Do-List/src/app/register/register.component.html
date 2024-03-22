@@ -1,0 +1,85 @@
+<div class="bootstrap-wrapper background-container">
+    <div class="container">
+        <div class="row mt">
+            <div class="col-md-3">
+                <img src="/assets/12.png" height="500px" width="700px" />
+            </div>
+            <div class="col-md-6 offset-md-3">
+                <div class="card custom-card shadow-border">
+                    <div *ngIf="successMessage" class="alert-success text-center" role="alert">
+                        {{ successMessage }}
+                    </div>
+                    <div *ngIf="errorMessage" class="alert-error text-center" role="alert">
+                        {{ errorMessage }}
+                    </div>
+                    <div class="card-body">
+                        <form [formGroup]="register" (ngSubmit)="onSubmit()">
+                            <mat-error *ngIf="register.get('emailId')?.invalid && (register.get('emailId')?.dirty || register.get('emailId')?.touched)">
+                                <span *ngIf="register.get('emailId')?.errors?.['required']">Email is required.</span>
+                                <span *ngIf="register.get('emailId')?.errors?.['pattern']">Please enter a valid email address(example@gmail.com).</span>
+                            </mat-error>
+                            <mat-form-field class="full-width">
+                                <mat-label>Email Id</mat-label>
+                                <input formControlName="emailId" type="email" matInput />
+                            </mat-form-field>
+                            <!--username-->
+                            <mat-error *ngIf="register.get('userName')?.invalid && (register.get('userName')?.dirty || register.get('userName')?.touched)">
+                                <span *ngIf="register.get('userName')?.errors?.['required']">Username is required.</span>
+                                <span *ngIf="register.get('userName')?.errors?.['pattern']">Username must contain at least 2 characters and start with a letter.</span>
+                            </mat-error>
+                            <mat-form-field class="full-width">
+                                <mat-label>Username</mat-label>
+                                <input formControlName="userName" type="text" matInput /> 
+                            </mat-form-field>
+                            <!--password-->
+                            <mat-error *ngIf="register.get('password')?.invalid && (register.get('password')?.dirty || register.get('password')?.touched)">
+                                <span *ngIf="register.get('password')?.errors?.['required']">Password is required.</span>
+                                <span *ngIf="register.get('password')?.errors?.['pattern']">Password must be at least 5 characters long and contain at least one letter, one number, and one special character.</span>
+                            </mat-error>
+                            <mat-form-field class="full-width">
+                                <mat-label>Password</mat-label>
+                               <input formControlName="password" [type]="hidePassword ? 'password' : 'text'" matInput />
+                            </mat-form-field>
+                            <!---
+                            <mat-error *ngIf="register.get('confirmPassword')?.invalid && (register.get('confirmPassword')?.dirty || register.get('confirmPassword')?.touched)">
+                                <span *ngIf="register.get('confirmPassword')?.errors?.['required']">Confirm password is required.</span>
+                                <span *ngIf="register.get('confirmPassword')?.errors?.['passwordMismatch']">Passwords do not match.</span>
+                            </mat-error>
+                            <mat-form-field class="full-width">
+                                <mat-label>Confirm Password</mat-label>
+                                <input formControlName="confirmPassword" type="password" matInput /> 
+                            </mat-form-field>-->
+                            <!--number-->
+                            <mat-error *ngIf="register.get('phoneNo')?.invalid && (register.get('phoneNo')?.dirty || register.get('phoneNo')?.touched)">
+                                <span *ngIf="register.get('phoneNo')?.errors?.['required']">Phone number is required.</span>
+                                <span *ngIf="register.get('phoneNo')?.errors?.['pattern']">Please enter a valid 10-digit phone number.</span>
+                            </mat-error>
+                            <mat-form-field class="full-width">
+                                <mat-label>Phone Number</mat-label>
+                                <input formControlName="phoneNo" type="tel" matInput />
+                               
+                            </mat-form-field>
+                            <!--age-->
+                            <mat-error *ngIf="register.get('age')?.invalid && (register.get('age')?.dirty || register.get('age')?.touched)">
+                                <span *ngIf="register.get('age')?.errors?.['required']">Age is required.</span>
+                                <span *ngIf="register.get('age')?.errors?.['min']">Age must be at least 18 years.</span>
+                            </mat-error>
+                            <mat-form-field class="full-width">
+                                <mat-label>Age</mat-label>
+                                <input formControlName="age" type="number" matInput />
+                               
+                            </mat-form-field>
+                            <div class="container text-center">
+                                <button type="submit" mat-raised-button color="primary">Sign Up</button>
+                                <button style="margin-left:30px;" type="reset" mat-raised-button color="primary">Reset</button>
+                            </div>
+                        </form>
+                        <div class="text-center">
+                            <h4>Already have an account? <a routerLink="/login">Log in</a></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

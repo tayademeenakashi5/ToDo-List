@@ -1,0 +1,40 @@
+.background-container {
+  background-image: url("/assets/1.jpg"); 
+  color: #fff; /* Set text color to white or any other color that fits your design */
+  padding: 20px;
+}
+.custom-card {
+    border: 1px solid #7891b1; 
+    padding: 30px;
+    box-shadow: 0 0 20px rgba(165, 42, 42, 0.5);
+    background-image: url("/assets/1.jpg"); 
+    border-radius: 8px; 
+    margin-left: 180px;
+    height: 570px;
+    width: 450px;
+   
+    
+}
+.full-width {
+    width: 100%;
+}
+/* Add this CSS in your component's styles or in a global styles file */
+.alert-success {
+    background-color: #d4edda; 
+    color: #155724; 
+    border: 1px solid #c3e6cb;
+    padding: 15px;
+    margin-bottom: 20px; 
+    border-radius: 4px; 
+  }
+  
+  .alert-error {
+    background-color: #f8d7da; 
+    color: #721c24; 
+    border: 1px solid #f5c6cb; 
+    padding: 15px; 
+    margin-bottom: 20px; 
+    border-radius: 4px; 
+  }
+
+  

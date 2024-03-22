@@ -1,0 +1,80 @@
+<div class="bootstrap-wrapper background-container">
+  <div class="task-form-container" [ngClass]="{'visible': isFormVisible}">
+    <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+      <div *ngIf="successMessage" class="text-center success-message">
+        <p>{{ successMessage }}</p>
+      </div>
+      <div *ngIf="errorMessage" class="text-center error-message">
+        <p>{{ errorMessage }}</p>
+      </div>
+      <!--task name-->
+      <div> 
+        <div *ngIf="taskForm.get('taskName')?.errors?.['required'] && taskForm.get('taskName')?.touched" class="text-center error-message">
+          <p>Task Name is required.</p>
+        </div>
+        <div *ngIf="taskForm.get('taskName')?.errors?.['minlength'] && taskForm.get('taskName')?.touched" class="text-center error-message">
+          <p>Task Name must be at least 3 characters long.</p>
+        </div>
+        <div *ngIf="taskForm.get('taskName')?.errors?.['maxlength'] && taskForm.get('taskName')?.touched" class="text-center error-message">
+          <p>Task Name cannot exceed 10 characters.</p>
+        </div>
+        <label for="taskName">Task Name:</label>
+        <input type="text" id="taskName" formControlName="taskName" name="taskName">
+      </div>
+      <!--description-->
+      <div>
+        <div *ngIf="taskForm.get('description')?.errors?.['required'] && taskForm.get('description')?.touched" class="text-center error-message">
+          <p>Description is required.</p>
+        </div>
+        <div *ngIf="taskForm.get('description')?.errors?.['minlength'] && taskForm.get('description')?.touched" class="text-center error-message">
+          <p>Description must be at least 10 characters long.</p>
+        </div>
+        <div *ngIf="taskForm.get('description')?.errors?.['maxlength'] && taskForm.get('description')?.touched" class="text-center error-message">
+          <p>Description cannot exceed 100 characters.</p>
+        </div>
+        <label for="description">Description:</label>
+        <textarea id="description" formControlName="description" name="description"></textarea>
+      </div>
+      <!--due date-->
+      <div> 
+        <div *ngIf="taskForm.get('dueDate')?.errors?.['required'] && taskForm.get('dueDate')?.touched" class="text-center error-message">
+          <p>Due Date is required.</p>
+        </div>
+        <div *ngIf="taskForm.get('dueDate')?.errors?.['futureDateOnly'] && taskForm.get('dueDate')?.touched" class="text-center error-message">
+          <p>Due Date must be a future date or Current date</p>
+        </div>
+        <label for="dueDate">Due Date:</label>
+        <input type="date" id="dueDate" formControlName="dueDate" name="dueDate">
+      </div>
+      <!--priority-->
+      <div>
+        <label for="taskPriority">Task Priority:</label>
+        <select id="taskPriority" formControlName="taskPriority" name="taskPriority">
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+        </select>
+        <div *ngIf="taskForm.get('taskPriority')?.errors?.['required'] && taskForm.get('taskPriority')?.touched" class="text-center error-message">
+          <p>Task Priority is required.</p>
+        </div>
+      </div>
+      <!--status-->
+      <div>
+        <label for="taskStatus">Task Status:</label>
+        <select id="taskStatus" formControlName="taskStatus" name="taskStatus">
+          <option value="to-Do">To-Do</option>
+          <option value="inProgress">In Progress</option>
+          <option value="completed"></option>
+        </select>
+        <div *ngIf="taskForm.get('taskStatus') && taskForm.get('taskStatus')?.errors?.['required'] && taskForm.get('taskStatus')?.touched" class="text-center error-message">
+          <p>Task Status is required.</p>
+        </div>
+      </div>
+      <button type="submit" [disabled]="!taskForm.valid">Create Task</button>
+    </form>
+  </div>
+
+  <button mat-fab color="primary" id="add-note-button" (click)="toggleAddNoteDisplay()">
+    <mat-icon>add</mat-icon>
+  </button>
+</div>

@@ -1,0 +1,110 @@
+<!--<mat-toolbar color="primary" [ngClass]="{'logged-in': isLoggedIn, 'logged-out': !isLoggedIn}">
+  <span>
+    <button
+      type="button"
+      aria-label="Toggle sidenav"
+      mat-icon-button
+      (click)="toggleSidenav()"
+    >
+      <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+    </button>
+    <a mat-icon-button routerLink="/">To-Do-{{ isLoggedIn ? 'Dashboard' : 'List' }}</a>
+  </span>
+  <span class="space" *ngIf="!isLoggedIn">
+    <a mat-icon-button routerLink="/login">Login</a>
+    <a mat-icon-button routerLink="/register">Sign up</a>
+  </span>
+  <span class="space1" *ngIf="isLoggedIn">
+    <div class="search-container">
+      <div id="search-bar">
+        <mat-form-field appearance="fill" id="search-box">
+          <input matInput type="text" name="searchquery" id="searchquery" placeholder="Search Task" [(ngModel)]="searchText"/>
+        </mat-form-field>
+        <button mat-button type="button" (click)="search()">
+          <mat-icon>search</mat-icon>
+        </button>
+      </div>
+    </div>
+
+    <a mat-icon-button routerLink="/archive-task"><mat-icon>archive</mat-icon></a>
+    <a mat-icon-button (click)="logout()"><mat-icon>exit_to_app</mat-icon></a>
+  </span>
+</mat-toolbar>-->
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport
+    [attr.role]="'navigation'"
+    [mode]="'side'"
+    [opened]="false"
+  >
+    <mat-toolbar>ToDo-List</mat-toolbar>
+    <mat-nav-list *ngIf="isLoggedIn">
+      <a mat-list-item routerLink="/profile">
+        <mat-icon class="icon">person</mat-icon>profile
+      </a>
+      <!--<a mat-list-item routerLink="/todo-list-form">
+        <mat-icon class="icon">note_add</mat-icon>New Task
+      </a>-->
+      <a mat-list-item routerLink="/archive-task" >
+        <mat-icon class="icon">archives</mat-icon>Archives
+      </a>
+      <a mat-list-item href="#">
+        <mat-icon class="icon">settings</mat-icon>Settings
+      </a>
+     <!--<a mat-icon-button (click)="logout()">
+        <mat-icon>exit_to_app</mat-icon>logout
+      </a>-->
+      <a  mat-icon-button (click)="logout()">
+        <mat-icon class="icon">exit_to_app</mat-icon>
+      </a>
+    </mat-nav-list>
+    <mat-nav-list *ngIf="!isLoggedIn">
+      <a mat-list-item routerLink="/login">
+        <mat-icon class="icon">person</mat-icon>Login
+      </a>
+      <a mat-list-item routerLink="/register">
+       <mat-icon class="icon">person_add</mat-icon> Sing-up
+      </a>
+      
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary" [ngClass]="{'logged-in': isLoggedIn, 'logged-out': !isLoggedIn}">
+      <span>
+        <button
+          type="button"
+          aria-label="Toggle sidenav"
+          mat-icon-button
+          (click)="drawer.toggle()"
+        >
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+        <a mat-icon-button routerLink="/todo-list">To-Do-{{ isLoggedIn ? 'Dashboard' : 'List' }}</a>
+      </span>
+      <span class="space" *ngIf="!isLoggedIn">
+        <a mat-icon-button routerLink="/login">Login</a>
+        <a mat-icon-button routerLink="/register">Sign up</a>
+        <a mat-icon-button (click)="logout()">Exit</a>
+       
+      </span>
+      <span class="space1" *ngIf="isLoggedIn">
+       <!--- <div class="search-container">
+          <div id="search-bar">
+            <mat-form-field appearance="fill" id="search-box">
+              <input matInput type="text" name="searchquery" id="searchquery" placeholder="Search Task" [(ngModel)]="searchText"/>
+            </mat-form-field>
+            <button mat-button type="button" (click)="search()">
+              <mat-icon>search</mat-icon>
+            </button>
+          </div>
+        </div>-->
+        <!--<a mat-icon-button routerLink="/archive-task"><mat-icon>archive</mat-icon></a>
+        <a mat-icon-button (click)="logout()"><mat-icon>exit_to_app</mat-icon></a>-->
+        <a mat-icon-button routerLink="/archive-task">Archive</a>
+        <a mat-icon-button (click)="logout()">Logout</a>
+      </span>
+    </mat-toolbar>
+  </mat-sidenav-content>
+</mat-sidenav-container>

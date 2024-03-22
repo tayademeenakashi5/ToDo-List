@@ -1,0 +1,102 @@
+<!-- Remove the commented out code at the beginning of the file -->
+<div class="bootstrap-wrapper background-container">
+<mat-card matRipple class="task-card " *ngFor="let element of taskList" >
+    <mat-card-title-group>
+  
+      <!-- Priority Icons -->
+      <!--<button *ngIf="element.taskPriority === 'Critical'" mat-icon-button class="priority-button">
+      
+      </button>
+      <button *ngIf="element.taskPriority === 'High'" mat-icon-button class="priority-button">
+       
+      </button>
+      <button *ngIf="element.taskPriority === 'Medium'"  mat-icon-button class="priority-button">
+       
+      </button>
+      <button *ngIf="element.taskPriority === 'Low'"  mat-icon-button class="priority-button">
+       
+      </button>-->
+  
+      <!-- Task Details -->
+      <mat-card-title>
+        <h2>{{element.taskName}}</h2>
+        <p>Due Date: {{element.dueDate}}</p>
+      </mat-card-title>
+      <mat-card-title>
+        <p>{{element.discription}}</p>
+      </mat-card-title>
+      <mat-card-title>
+        <!--<p [ngClass]="{'high-priority': element.taskPriority === 'high', 'medium-priority': element.taskPriority === 'medium', 'low-priority': element.taskPriority === 'low'}">
+          Priority: {{element.taskPriority}}
+        </p>-->
+        Priority:
+        <button *ngIf="element.taskPriority === 'high' "style="background-color: red; color: white;">High</button>
+        <button *ngIf="element.taskPriority === 'medium' "style="background-color: yellow">Medium</button>
+        <button *ngIf="element.taskPriority === 'low' "style="background-color:orange">Low</button>
+        Status: 
+        
+        <button *ngIf="element.taskStatus === 'to-Do'" style="background-color: red; color: white;">To-Do</button>
+        <button *ngIf="element.taskStatus === 'inProgress'" style="background-color: orange; color: black;">In-Progress</button>
+        <button *ngIf="element.taskStatus === 'completed'" style="background-color: green; color: white;">Completed</button>
+      </mat-card-title>
+      <mat-card-title>
+        <!--<p  [ngClass]="{'pending-status': element.taskStatus === 'pending', 'in-progress-status': element.taskStatus === 'inProgress', 'completed-status': element.taskStatus === 'completed'}">
+          Status: {{element.taskStatus}}
+        </p>-->
+        
+      </mat-card-title>
+      <br>
+      <br>
+     
+      
+  
+    </mat-card-title-group>
+  
+    <mat-card-content>
+      <!-- Update Form -->
+      <div *ngIf="updateMode && updatedTask.taskId === element.taskId">
+        <form (submit)="saveEdit()">
+          <mat-form-field>
+            <input matInput placeholder="Task Name" [(ngModel)]="updatedTask.taskName" name="taskName" required>
+          </mat-form-field>
+          <mat-form-field>
+            <textarea matInput placeholder="Discription" [(ngModel)]="updatedTask.discription" name="discription"
+              required></textarea>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Task Status</mat-label>
+            <mat-select placeholder="Select Task Status" [(ngModel)]="updatedTask.taskStatus" name="taskStatus" required>
+              <mat-option value="to-Do">To-Do</mat-option>
+              <mat-option value="inProgress">In Progress</mat-option>
+              <mat-option value="completed">Completed</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <button mat-button type="submit" color="primary">Save</button>
+          <button mat-button (click)="cancelEdit()">Cancel</button>
+        </form>
+      </div>
+  
+      <!-- Buttons for Actions -->
+      <!--<button mat-button color="warn" (click)="deleteTask(element.taskId)">
+        <mat-icon>delete</mat-icon>
+      </button>-->
+      <button mat-button color="warn" *ngIf="element.taskStatus === 'to-Do'" (click)="deleteTask(element.taskId)">
+        <mat-icon>delete</mat-icon>
+      </button>
+
+      <button mat-button color="primary" (click)="startUpdate(element)">
+        <mat-icon>edit</mat-icon>
+      </button>
+      
+      <button mat-button color="accent" (click)="markTaskAsCompleted(element.taskId)">
+        <mat-icon>done</mat-icon>
+      </button>
+      <!--<button mat-button color="warn" (click)="archiveTask(element.taskId)">
+        <mat-icon>archive</mat-icon>
+      </button>-->
+      <button mat-button color="warn" *ngIf="element.taskStatus === 'completed'" (click)="archiveTask(element.taskId)">
+        <mat-icon>archive</mat-icon>
+      </button>
+    </mat-card-content>
+  </mat-card>
+</div>
