@@ -4,6 +4,7 @@ My project name is to-do list," is a tool designed to help individuals or teams 
 technology:
 
 in over project we are using some technology front end technologys, backend technology, and database.
+
 i give u a deep inroduction about my technology in fornt end we using html , css, typescript, angular ,marerial ui and bootstrap
 HTML and CSS handle the structure and styling of my web pages, TypeScript manages the logic of my frontend application, Angular provides the framework for structuring my frontend code and managing components, Angular Material UI offers pre-built UI components following Material Design principles for my Angular application, and Bootstrap helps in making my web application responsive and visually appealing. most i am using bootstrap 
 
